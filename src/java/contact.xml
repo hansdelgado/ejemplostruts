@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="default" extends="struts-default">
+          <action name="add" class="contact.action.ContactAction" method="addContact">
+                <result name="success">/contact.jsp</result>
+          </action>
+    </package>
+    
+    <package name="contacts" extends="struts-default">
+        <action name="contact" class="contact.action.ContactAction2">
+            <result>jspView/contact.jsp</result>
+        </action>
+        <action name="add" class="contact.action.ContactAction2" method="add">
+           <result name="input">jspView/contact.jsp</result>
+           <result name="success">/jspView/contact.jsp</result>
+
+        </action>
+    </package>    
+</struts>
+
